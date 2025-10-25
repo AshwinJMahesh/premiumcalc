@@ -11,7 +11,7 @@ import SearchComponent from './Components/SearchComponent.jsx';
 
 // import React from 'react';
 
-function App() app{
+function App(){
   return (
       <>
     
