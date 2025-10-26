@@ -130,6 +130,16 @@ const calculateRateandSAdd=()=>{
 
 }
 
+  // Added dropdown
+  const handleCompany = (e) =>{
+    setCompany(e.target.value)
+  }
+
+  const handlePolicyType = (e) =>{
+    setPolicyType(e.target.value)
+  }
+
+
   const CalculatePremium = async (rate,sAdd) => {
 
     const requestData = {
@@ -193,9 +203,26 @@ const calculateRateandSAdd=()=>{
       <input value={seatingCapacity} onChange={e => setSeatingCapacity(e.target.value)} ref={seatingRef} placeholder="seatingCapacity" />
       <input value={legalLiability} onChange={e => setLegalLiability(e.target.value)} placeholder="legalLiability" />
       <input value={po} onChange={e => setPo(e.target.value)} placeholder="po" />
-      <input value={company} onChange={e => setCompany(e.target.value)} placeholder="company" />
+
+      
+      {/* <input value={company} onChange={e => setCompany(e.target.value)} placeholder="company" /> */}
+      
+      {/* DROPDOWN INPUT FIELDS */}
+      <select value={company} name="" id="" onChange={handleCompany}>
+        <option value="">--select--</option>
+        <option value="Reliance">Reliance</option>
+        <option value="other">Tata</option>
+      </select>
       <input value={regYear} onChange={e => setRegYear(e.target.value)} ref={regDateRef} placeholder="regYear" />
-      <input value={policyType} onChange={e => setPolicyType(e.target.value)} placeholder="policyType: TP or Full cover" />
+      {/* <input value={policyType} onChange={e => setPolicyType(e.target.value)} placeholder="policyType: TP or Full cover" /> */}
+      
+      {/* DROPDOWN INPUT FIELDS */}
+
+      <select value={policyType} name="" id="" onChange={handlePolicyType}>
+        <option value="">--select--</option>
+        <option value="TP">TP</option>
+        <option value="Premium">Premium</option>
+      </select>
 
       <button onClick={()=>calculateRateandSAdd()}>Calculate</button><br />   
 
